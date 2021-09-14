@@ -1,4 +1,4 @@
-package main
+package internal
 
 import (
 	"encoding/json"
@@ -16,7 +16,7 @@ func TestAuthorsHandler(t *testing.T) {
 	req, err := http.NewRequest(http.MethodGet, "/authors", nil)
 	require.NoError(t, err)
 
-	r := router()
+	r := Router()
 	rec := httptest.NewRecorder()
 	r.ServeHTTP(rec, req)
 

@@ -1,17 +1,17 @@
 package main
 
 import (
-	"log"
-	"time"
+	"os"
 
-	"github.com/brianvoe/gofakeit/v6"
+	"github.com/Neur0toxine/demo-web-service-go/cmd"
+	"github.com/jessevdk/go-flags"
 )
 
 func main() {
-	gofakeit.Seed(time.Now().UnixNano())
-	go processSignals()
-	r := router()
-	if err := r.Run(":8080"); err != nil {
-		log.Fatalf("cannot start the server on :8080 > %s", err)
+	if _, err := cmd.Parser.Parse(); err != nil {
+		if flagsErr, ok := err.(*flags.Error); ok && flagsErr.Type == flags.ErrHelp {
+			os.Exit(0)
+		}
+		os.Exit(-1)
 	}
 }

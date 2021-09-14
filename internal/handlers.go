@@ -1,4 +1,4 @@
-package main
+package internal
 
 import (
 	"net/http"
@@ -7,6 +7,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// AuthorsHandler will return formatted JSOn response with authors
 func AuthorsHandler(c *gin.Context) {
 	c.IndentedJSON(http.StatusOK, repository.Authors())
 }

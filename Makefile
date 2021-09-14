@@ -9,7 +9,7 @@ all: clean build run
 
 run:
 	@echo "==> Running"
-	@${BIN}
+	@${BIN} run
 
 build: deps fmt
 	@echo "==> Building for prod"
