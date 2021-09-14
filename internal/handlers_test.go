@@ -7,7 +7,7 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/Neur0toxine/demo-web-service-go/data/model"
+	"github.com/Neur0toxine/demo-web-service-go/internal/data/model"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

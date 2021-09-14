@@ -3,7 +3,7 @@ package internal
 import (
 	"net/http"
 
-	"github.com/Neur0toxine/demo-web-service-go/data/repository"
+	"github.com/Neur0toxine/demo-web-service-go/internal/data/repository"
 	"github.com/gin-gonic/gin"
 )
 

@@ -1,7 +1,7 @@
 package repository
 
 import (
-	"github.com/Neur0toxine/demo-web-service-go/data/model"
+	"github.com/Neur0toxine/demo-web-service-go/internal/data/model"
 	"github.com/brianvoe/gofakeit/v6"
 )
 
