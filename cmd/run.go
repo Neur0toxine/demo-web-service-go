@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/Neur0toxine/demo-web-service-go/internal"
+	"github.com/Neur0toxine/demo-web-service-go/internal/app"
 	"github.com/brianvoe/gofakeit/v6"
 )
 
@@ -20,8 +20,8 @@ type RunCommand struct{}
 
 func (c *RunCommand) Execute(args []string) error {
 	gofakeit.Seed(time.Now().UnixNano())
-	go internal.ProcessSignals()
-	r := internal.Router()
+	go app.ProcessSignals()
+	r := app.Router()
 	if err := r.Run(":8080"); err != nil {
 		return fmt.Errorf("cannot start the server on :8080 > %w", err)
 	}
