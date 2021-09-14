@@ -12,7 +12,7 @@ func Books() (books []model.Book) {
 	books = make([]model.Book, 10)
 	for i := 0; i < 10; i++ {
 		books[i] = model.Book{
-			ID:              uint64(i),
+			ID:              uint64(i + 1),
 			Name:            gofakeit.Phrase(),
 			PublicationDate: time.Now(),
 			Rate:            uint8(rand.Intn(5)),

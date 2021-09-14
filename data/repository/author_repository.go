@@ -9,7 +9,7 @@ func Authors() (authors []model.Author) {
 	authors = make([]model.Author, 10)
 	for i := 0; i < 10; i++ {
 		authors[i] = model.Author{
-			ID:        uint64(i),
+			ID:        uint64(i + 1),
 			FirstName: gofakeit.FirstName(),
 			LastName:  gofakeit.LastName(),
 			Books:     Books(),

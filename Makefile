@@ -26,6 +26,13 @@ deps:
 	@go mod tidy
 	@go mod vendor
 
+test: clean build
+	@echo "==> Running tests"
+	@go test ./... -v -cpu 2 -race -timeout=30s -coverpkg=./... -coverprofile=$(ROOT_DIR)/coverage.out | tee $(ROOT_DIR)/test-report.txt
+	@cd / && go install github.com/axw/gocov/gocov@v1.0.0
+	@gocov convert $(ROOT_DIR)/coverage.out | gocov report
+	@go mod tidy
+
 .PHONY: clean
 clean:
 ifneq ($(wildcard $(ROOT_DIR)/vendor/.*),)
